@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Time Service — Центр мониторинга инфраструктуры</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:radial-gradient(circle at top right,#153b6f,#050a14 45%,#03060d);color:#fff} .container{max-width:1600px;margin:0 auto;padding:24px} .glass{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px);box-shadow:0 0 28px rgba(0,212,255,.08)} .header{display:flex;justify-content:space-between;align-items:center;padding:22px 30px;border-radius:24px}.brand h1{margin:0;font-size:36px}.brand p{margin:8px 0 0;color:#9fc7ff;font-size:16px}.clock{text-align:right}.clock .time{font-size:28px;font-weight:700}.hero{margin-top:20px;padding:28px;border-radius:24px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(123,97,255,.08))}.status{font-size:44px;font-weight:900;color:#43ff8f;text-shadow:0 0 18px rgba(67,255,143,.35)} .muted{color:#9fc7ff}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:20px}.card{padding:18px;border-radius:20px}.label{font-size:12px;color:#9fc7ff;text-transform:uppercase;letter-spacing:1px}.value{font-size:38px;font-weight:800;margin-top:10px}.main{display:grid;grid-template-columns:2fr 1.1fr 1.1fr;gap:18px;margin-top:20px}.tbl table{width:100%;border-collapse:collapse;margin-top:14px}.tbl th,.tbl td{padding:14px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left}.tbl th{color:#9fc7ff}.donut{width:220px;height:220px;border-radius:50%;background:conic-gradient(#35ff87 0 82%, #f5b400 82% 92%, #ff4d6d 92% 100%);display:flex;align-items:center;justify-content:center;margin:20px auto}.inner{width:145px;height:145px;border-radius:50%;background:#09111d;display:flex;align-items:center;justify-content:center;flex-direction:column}.inc-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)} .tiles{display:grid;grid-template-columns:repeat(7,1fr);gap:14px;margin-top:20px}.tile{padding:22px;border-radius:18px;text-align:center;font-weight:700}.activity{margin-top:20px;padding:22px;border-radius:22px}.feed-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)} @media(max-width:1300px){.grid{grid-template-columns:repeat(3,1fr)}.main{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header glass">
+<div class="brand">
+<h1>Time Service</h1>
+<p>Центр мониторинга инфраструктуры</p>
+</div>
+<div class="clock">
+<div class="muted">Кызылорда</div>
+<div class="time" id="clock"></div>
+</div>
+</div>
+<div class="hero glass">
+<div>
+<div class="muted">ОПЕРАЦИОННЫЙ СТАТУС</div>
+<div class="status">ВСЕ СИСТЕМЫ В НОРМЕ</div>
+<div>Все критически важные объекты функционируют стабильно</div>
+</div>
+<div>
+<div>Последняя проверка: 07:04</div>
+<div>Следующая проверка: 07:30</div>
+</div>
+</div>
+<div class="grid">
+<div class="card glass"><div class="label">Всего камер</div><div class="value">1482</div></div>
+<div class="card glass"><div class="label">Онлайн</div><div class="value" style="color:#35ff87">1456</div></div>
+<div class="card glass"><div class="label">Оффлайн</div><div class="value" style="color:#ff4d6d">26</div></div>
+<div class="card glass"><div class="label">Высокая задержка</div><div class="value" style="color:#f5b400">8</div></div>
+<div class="card glass"><div class="label">Средний ping</div><div class="value">42 ms</div></div>
+<div class="card glass"><div class="label">SLA</div><div class="value">99.74%</div></div>
+</div>
+<div class="main">
+<div class="card glass tbl">
+<div class="label">Оффлайн камеры</div>
+<table>
+<tr><th>Камера</th><th>Локация</th><th>Статус</th></tr>
+<tr><td>CAM-021</td><td>Жалагаш</td><td>Offline</td></tr>
+<tr><td>CAM-115</td><td>Пост 7</td><td>Offline</td></tr>
+<tr><td>CAM-332</td><td>Офис</td><td>Offline</td></tr>
+<tr><td>CAM-410</td><td>Трасса</td><td>Offline</td></tr>
+</table>
+</div>
+<div class="card glass">
+<div class="label">Состояние инфраструктуры</div>
+<div class="donut"><div class="inner"><div style="font-size:42px;font-weight:800">82%</div><div>Healthy</div></div></div>
+</div>
+<div class="card glass">
+<div class="label">Инциденты</div>
+<div class="inc-item">🔴 Новые инциденты: 4</div>
+<div class="inc-item">🟡 В работе: 7</div>
+<div class="inc-item">🟢 Решено сегодня: 12</div>
+<div class="inc-item">📨 Сводка отправлена</div>
+</div>
+</div>
+<div class="tiles">
+<div class="tile glass">📹<br>Камеры</div>
+<div class="tile glass">⚠️<br>Инциденты</div>
+<div class="tile glass">👷<br>Техники</div>
+<div class="tile glass">📍<br>Объекты</div>
+<div class="tile glass">📡<br>Мониторинг</div>
+<div class="tile glass">📊<br>Аналитика</div>
+<div class="tile glass">📁<br>Отчеты</div>
+</div>
+<div class="activity glass">
+<div class="label">Последняя активность</div>
+<div class="feed-item">🔴 Камера CAM-021 недоступна</div>
+<div class="feed-item">🟡 Высокая задержка обнаружена</div>
+<div class="feed-item">🟢 Утренняя проверка завершена</div>
+<div class="feed-item">📨 Сводный отчет отправлен</div>
+</div>
+</div>
+<script>
+function tick(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleString('ru-RU');}
+setInterval(tick,1000);tick();
+</script>
+</body>
+</html>
